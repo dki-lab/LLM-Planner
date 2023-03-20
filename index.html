@@ -82,26 +82,40 @@
               <!-- Code Link. -->
               <span class="link-block">
                 <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon)</span>
                 </a>
               </span>
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/askforalfred/alfred"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                </a>
+                </a> -->
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="110%">
+        <source src="./static/images/demo.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">LLM-Planner</span> does dynamic and grounded few-shot planning for embodied AI agents
+      </h2>
     </div>
   </div>
 </section>
@@ -111,18 +125,13 @@
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered has-text-centered">
-        <p><b>TL;DR</b> Dynamically prompt GPT-3 with observations from the visually-perceived environment under true few-shot setting to  generate the grounded high-level plans.</p>
+        <p><b>Overview:</b> <span class="dnerf">LLM-Planner</span> continously updates the high-level plans with the feedback from the environment.</p>
       </div>	
       <div class="columns is-centered has-text-centered">
         <div class="column is-fullwidth">
-          <video autoplay muted loop width="80%">
-            <source src="./static/images/demo.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <img src="./static/images/case_studies.png" width="80%"/>
+          <div class="column is-full-width">
+            <img src="./static/images/intro.png" width="60%"/>
+          </div>
         </div>
       </div>
     </div>
@@ -156,12 +165,12 @@
       <div class="column is-full-width">
         
         <h2 class="title is-3">Method</h2>
-        <img src="./static/images/figure1.png"/>
+        <!-- <img src="./static/images/figure1.png"/>
         <div class="content has-text-justified">
           <p>
             At the first step, LLM-Planner prompts GPT-3 to generate a high-level plan. During the following steps, LLM-Planner re-plans with visually observed information from the environment when the execution has failed too many times or the agents has taken too many steps.
           </p>
-        </div>
+        </div> -->
         
         <img src="./static/images/figure2.png"/>
         <div class="content has-text-justified">

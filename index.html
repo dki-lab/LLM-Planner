@@ -109,13 +109,14 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">LLM-Planner</span> performs dynamic and grounded few-shot planning for embodied AI agents.
+      </h2>
       <video id="teaser" autoplay muted loop playsinline height="110%">
         <source src="./static/images/demo.mp4"
                 type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">LLM-Planner</span> does dynamic and grounded few-shot planning for embodied AI agents
-      </h2>
+
     </div>
   </div>
 </section>
@@ -125,7 +126,7 @@
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered has-text-centered">
-        <p><b>Overview:</b> <span class="dnerf">LLM-Planner</span> continously updates the high-level plans with the feedback from the environment.</p>
+        <p><b>Overview:</b> <span class="dnerf">LLM-Planner</span> continuously updates the high-level plans based on feedback from the environment.</p>
       </div>	
       <div class="columns is-centered has-text-centered">
         <div class="column is-fullwidth">
@@ -146,11 +147,11 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>This study focuses on embodied agents that can follow natural language instructions to complete complex tasks in a visually-perceived environment.
+          <p>This study focuses on using large language models (LLMs) as a planner for embodied agents that can follow natural language instructions to complete complex tasks in a visually-perceived environment. The high data cost and poor sample efficiency of existing methods hinders the development of versatile agents that are capable of many tasks and can learn new tasks quickly.
           </p>
-          <p>Existing methods rely on a large amount of (instruction, gold trajectory) pairs to learn a good policy. The high data cost and poor sample efficiency prevents the development of versatile agents that are capable of many tasks and can learn new tasks quickly.
+          <p>In this work, we propose a novel method, <span class="dnerf">LLM-Planner</span>, that harnesses the power of large language models to do few-shot planning for embodied agents. We further propose a simple but effective way to enhance LLMs with physical grounding to generate and update plans that are grounded in the current environment.
           </p>
-          <p>In this work, we propose a novel method, <i>LLM-Planner</i>, that harnesses the power of large language models (LLMs) such as <b>GPT-3</b> to do <b>few-shot</b> planning for embodied agents. We further propose a simple but effective way to enhance LLMs with physical grounding to generate plans that are grounded in the current environment. Experiments on the ALFRED dataset show that our method can achieve very competitive few-shot performance, even outperforming several recent baselines that are trained using the full training data despite using less than 0.5% of paired training data. Existing methods can barely complete any task successfully under the same few-shot setting. Our work opens the door for developing versatile and sample-efficient embodied agents that can quickly learn many tasks.
+          <p>Experiments on the ALFRED dataset show that our method can achieve very competitive few-shot performance: Despite using less than 0.5% of paired training data, <span class="dnerf">LLM-Planner</span> achieves competitive performance with recent baselines that are trained using the full training data. Existing methods can barely complete any task successfully under the same few-shot setting. Our work opens the door for developing versatile and sample-efficient embodied agents that can quickly learn many tasks. 
           </p>
         </div>
       </div>
@@ -175,7 +176,7 @@
         <img src="./static/images/figure2.png"/>
         <div class="content has-text-justified">
           <p>
-            The prompt includes an explanation of the task, a list of allowable high-level actions, 9 in-context examples selected by the kNN retriever from 100 training examples and a current test example. For dynamic grounded re-planning, we add the subgoals that have been completed and the list of objects observed so far in the environment.
+            The prompt includes an explanation of the task, a list of possible high-level actions, 9 in-context examples selected by the kNN retriever from 100 training examples, and a current test example. For dynamic grounded re-planning, we add the subgoals that have been completed and the list of objects observed in the environment.
           </p>
           <p>
             We only use 100 pairs of trajectory-instruction training data to retrieve in-context examples and to tune all the hyperparamters. Therefore, our work is under the true few-shot setting. 
@@ -191,7 +192,7 @@
             HLP ACC is the percentage of the correct prediction of HLP compared to the ground-truth of HLP for all episode. Only if a prediction of HLP in an episode exactly matches the ground-truth, we consider the prediction as a correct one. For the definition of SR, please refer to <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Shridhar_ALFRED_A_Benchmark_for_Interpreting_Grounded_Instructions_for_Everyday_Tasks_CVPR_2020_paper.pdf">ALFRED</a>. 
           </p>
           <p>
-          We integrate LLM-Planner with HLSM and evaluate on ALFRED. Using less than 0.5% of paired training data, LLM-Planner achieves competitive performance on the <a href="https://leaderboard.allenai.org/alfred/submissions/public">AI2 ALFRED leaderboard</a> and outperforms multiple other baselines, which are trained with the full training set. 
+            We integrated <span class="dnerf">LLM-Planner</span> with HLSM and evaluated its performance on ALFRED dataset. Despite using less than 0.5% of paired training data, <span class="dnerf">LLM-Planner</span> achieved competitive performance compared to models trained on full data and even outperformed multiple other baselines that were trained using the full data. 
           </p>
           
           <table class="table is-bordered" style="text-align: center">
@@ -335,7 +336,7 @@
               
 
           </table>
-        </div>
+        <!-- </div>
 		
         <h2 class="title is-3">Related Work</h2>
         <div class="content has-text-justified">
@@ -357,7 +358,7 @@
           <p>
             <a href="https://arxiv.org/abs/2206.02928">PLANner</a> uses commonsense-infused prompts to generate a static HLP and matches it to the closest admissible action using a Sentence-Transformer.
           </p>
-        </div>
+        </div> -->
         
       </div>
     </div>
